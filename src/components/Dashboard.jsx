@@ -1,7 +1,7 @@
 import '../styles.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import Users from './Users';
-import Post from './Post';
+import Posts from './Post';
 import Comments from './Comments'
 
 function Dashboard(){
@@ -22,7 +22,7 @@ function Dashboard(){
       </div>
       <Routes>
         <Route path="users" element={<Users />} />
-        <Route path="posts" element={<Post />} />
+        <Route path="posts" element={<Posts />} />
         <Route path="comments" element={<Comments />} />
       </Routes>
     </div>

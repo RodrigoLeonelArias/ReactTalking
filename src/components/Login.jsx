@@ -21,10 +21,11 @@ function Login() {
 
   return (
     <div className="login-container">
-      {!showRegister ? (
+      {!showRegister ? 
         <>
           <h2>Administrador TALKING</h2>
           <form onSubmit={handleLogin}>
+            
             <input
               type="email"
               placeholder="Correo electrónico"
@@ -45,7 +46,7 @@ function Login() {
             Registrarse
           </button>
         </>
-      ) : (
+       : (
         <RegisterForm setShowRegister={setShowRegister} />
       )}
     </div>
