@@ -1,21 +1,21 @@
 {
   "superusuario": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "1234"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Usuario 1",
       "email": "usuario1@example.com",
       "status": "active",
       "active": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Usuario 2",
       "email": "usuario2@example.com",
       "status": "blocked",
@@ -24,13 +24,7 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Posteo 1",
-      "content": "Contenido del posteo 1",
-      "active": true
-    },
-    {
-      "id": 2,
+      "id": "2",
       "title": "Posteo 2",
       "content": "Contenido del posteo 2",
       "active": false
@@ -38,13 +32,7 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "postId": 1,
-      "content": "Comentario 1",
-      "active": true
-    },
-    {
-      "id": 2,
+      "id": "2",
       "postId": 2,
       "content": "Comentario 2",
       "active": false

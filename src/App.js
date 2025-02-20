@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Users from './components/Users';
 import Posts from './components/Post';
-
-
+import Comments from './components/Comments';
 
 function App() {
-  const isLoggedIn= !!localStorage.getItem('token'); // << La siguiente funcionalidad chequea si el administrador esta logueado
+  const isLoggedIn = !!localStorage.getItem('token'); // Verifica si el usuario está autenticado
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element= {isLoggedIn ? <Navigate to= "/dashboard"/>: <Login/>}/>
-        {/* Ruta del Dashboard */}
-        <Route path="/dashboard/*" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
         
-        <Route path= "/dashboard/*" element= {isLoggedIn ? <Dashboard/> : <Navigate to= "/"/>}/>
-        <Route path= "/dashboard/*" element= {isLoggedIn ? <Users/> : <Navigate to= "/"/>}/>
-        <Route path= "/dashboard/*" element= {isLoggedIn ? <Posts/> : <Navigate to= "/"/>}/>
+        <Route path="/" element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login />} />
+
+      
+        <Route path="/dashboard/*" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}>
+          <Route path="users" element={<Users />} />
+          <Route path="posts" element={<Posts />} />
+          <Route path="comments" element={<Comments />} />
+        </Route>
+
+      
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

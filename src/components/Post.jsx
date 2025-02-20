@@ -1,6 +1,7 @@
-import '../styles.css'
+import '../styles.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ButtonActions from './ButtonActions';  // Importar el componente ButtonActions
 
 function Posts() { 
   const [posts, setPosts] = useState([]);
@@ -40,11 +41,12 @@ function Posts() {
         posts.map((post) => (
           <div className="list-item" key={post.id}>
             <span>{post.title} - {post.active ? "Activo" : "Bloqueado"}</span>
-            <div>
-              <button className="activate" onClick={() => handleActivate(post.id)}>Activar</button>
-              <button className="block" onClick={() => handleBlock(post.id)}>Bloquear</button>
-              <button className="delete" onClick={() => handleDelete(post.id)}>Eliminar</button>
-            </div>
+            <ButtonActions  // Usando ButtonActions
+              comment={post}  // Renombrado como "comment" pero es un post
+              onActivate={handleActivate}
+              onBlock={handleBlock}
+              onDelete={handleDelete}
+            />
           </div>
         ))
       ) : (

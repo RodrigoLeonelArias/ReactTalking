@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #fa53d6;
+    background-color: #03b6e2;
     color: #333;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@ body {
 .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: #be029f;
+    background-color: #0298be;
     color: white;
     border: none;
     border-radius: 5px;
@@ -54,7 +54,47 @@ body {
     max-width: 400px;
     margin: auto;
   }
-  
+
+button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+button.activate {
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+}
+
+button.activate:hover {
+  background-color: #45a049; 
+}
+
+
+button.block {
+  background-color: #FF5722; 
+  color: white;
+  border: none;
+}
+
+button.block:hover {
+  background-color: #e64a19; 
+}
+
+
+button.delete {
+  background-color: #f44336; 
+  color: white;
+  border: none;
+}
+
+button.delete:hover {
+  background-color: #d32f2f; 
+}
   .register-container h2 {
     margin-bottom: 20px;
   }
